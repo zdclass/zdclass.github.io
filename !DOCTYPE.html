@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva 小高手任務</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+        .step {
+            display: none; /* Hide all steps initially */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .step.active-step {
+            display: block; /* Show only the active step */
+        }
+        .icon {
+            font-size: 4rem; /* Larger icon */
+            margin-bottom: 15px;
+        }
+        h2 {
+            color: #5a4bff; /* Purple color */
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1.1rem; /* Slightly larger text */
+            margin-bottom: 20px;
+        }
+        strong {
+             color: #d63384; /* Pinkish color for emphasis */
+             font-weight: bold;
+        }
+        button { /* Style for NEXT buttons */
+            background-color: #5a4bff; /* Purple button */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px; /* More rounded */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            min-width: 200px; /* Ensure button is wide enough */
+        }
+        button:hover {
+            background-color: #473acc; /* Darker purple on hover */
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        /* Style for the link button */
+        .button-link {
+            display: inline-block;
+            background-color: #5a4bff; /* Keep consistent purple */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px; /* Add some margin */
+            margin-bottom: 15px; /* Add some margin */
+            text-decoration: none; /* Remove underline */
+            min-width: 200px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow */
+        }
+        .button-link:hover {
+            background-color: #473acc; /* Darker purple on hover */
+        }
+        .progress-indicator {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        .help-text {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        /* Removed QR Code Container Style */
+        .important-note {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="step-0" class="step active-step">
+            <h2>Canva 小高手任務，出發！🚀</h2>
+            <p class="icon">👋</p>
+            <p>哈囉！準備好你的 iPad，我們要一步一步完成超酷的 Canva 設計任務！請仔細看每個步驟的說明，完成後按下 [下一步！] 按鈕喔。</p>
+            <button onclick="nextStep()">準備好了，開始任務！</button>
+        </div>
+
+        <div id="step-1" class="step">
+            <p class="progress-indicator">第 1 步 / 共 33 步</p>
+            <h2>找到相機 App</h2>
+            <p class="icon">📷</p>
+            <p>請先找到 iPad 桌面上的「<strong>相機</strong>」App，它長得像一台照相機，點一下把它打開。</p>
+            <button onclick="nextStep()">我打開相機了，下一步！</button>
+        </div>
+
+        <div id="step-2" class="step">
+            <p class="progress-indicator">第 2 步 / 共 33 步</p>
+             <h2>拍照</h2>
+            <p class="icon">📸</p>
+            <p>用相機對著老師說可以拍的東西，然後按下螢幕上那個<strong>白色的大圓圈</strong>按鈕，完成拍照！</p>
+            <button onclick="nextStep()">我拍好照片了，下一步！</button>
+        </div>
+
+        <div id="step-3" class="step">
+            <p class="progress-indicator">第 3 步 / 共 33 步</p>
+             <h2>找到 Canva App</h2>
+            <p class="icon">✨</p>
+            <p>很棒！現在請回到 iPad 桌面，找到<strong>藍紫色底、有白色 C 字</strong>的「<strong>Canva</strong>」App。</p>
+            <button onclick="nextStep()">我找到 Canva 了，下一步！</button>
+        </div>
+
+        <div id="step-4" class="step">
+            <p class="progress-indicator">第 4 步 / 共 33 步</p>
+            <h2>打開 Canva</h2>
+            <p class="icon">✨</p>
+            <p>點一下「Canva」App 把它打開。<br><small>(小提示：如果需要登入，請舉手問老師！)</small></p>
+            <button onclick="nextStep()">我打開 Canva 了，下一步！</button>
+        </div>
+
+        <div id="step-5" class="step">
+            <p class="progress-indicator">第 5 步 / 共 33 步</p>
+             <h2>建立新設計</h2>
+            <p class="icon">➕</p>
+            <p>在 Canva App 裡面，找到<strong>右下角</strong>那個<strong>紫色的大「+」號</strong>，點下去。</p>
+            <button onclick="nextStep()">我點了加號，下一步！</button>
+        </div>
+
+        <div id="step-6" class="step">
+            <p class="progress-indicator">第 6 步 / 共 33 步</p>
+            <h2>選擇尺寸</h2>
+            <p class="icon">⬜️</p>
+            <p>在跳出來的選項中，選擇「<strong>Instagram 貼文 (正方形)</strong>」。</p>
+            <button onclick="nextStep()">我選好尺寸了，下一步！</button>
+        </div>
+
+        <div id="step-7" class="step">
+            <p class="progress-indicator">第 7 步 / 共 33 步</p>
+            <h2>找到上傳按鈕</h2>
+            <p class="icon">☁️⬆️</p>
+            <p>現在你看到一個空白畫布了。請看畫面<strong>下方</strong>的工具列，找到「<strong>上傳</strong>」按鈕 (像雲朵加向上箭頭)，點它。</p>
+            <button onclick="nextStep()">我點了上傳，下一步！</button>
+        </div>
+
+         <div id="step-8" class="step">
+            <p class="progress-indicator">第 8 步 / 共 33 步</p>
+            <h2>點擊上傳檔案</h2>
+            <p class="icon">⬆️</p>
+            <p>接著點一下<strong>紫色</strong>的「<strong>上傳檔案</strong>」按鈕。</p>
+            <button onclick="nextStep()">我點了上傳檔案，下一步！</button>
+        </div>
+
+        <div id="step-9" class="step">
+            <p class="progress-indicator">第 9 步 / 共 33 步</p>
+            <h2>選擇照片圖庫</h2>
+            <p class="icon">🖼️</p>
+            <p>選擇「<strong>照片圖庫</strong>」。</p>
+            <button onclick="nextStep()">我選了照片圖庫，下一步！</button>
+        </div>
+
+        <div id="step-10" class="step">
+             <p class="progress-indicator">第 10 步 / 共 33 步</p>
+            <h2>選取你的照片</h2>
+             <p class="icon">👍</p>
+            <p>在你的照片庫裡，找到<strong>剛剛拍的那張照片</strong>，輕輕點一下選取它。</p>
+             <button onclick="nextStep()">我選好照片了，下一步！</button>
+        </div>
+
+        <div id="step-11" class="step">
+             <p class="progress-indicator">第 11 步 / 共 33 步</p>
+            <h2>新增照片</h2>
+             <p class="icon">✅</p>
+            <p>點擊畫面右上角的「<strong>新增</strong>」按鈕。等一下下，讓照片上傳。</p>
+             <button onclick="nextStep()">我按了新增，下一步！</button>
+        </div>
+
+        <div id="step-12" class="step">
+            <p class="progress-indicator">第 12 步 / 共 33 步</p>
+            <h2>將照片加到畫布</h2>
+            <p class="icon">✨</p>
+            <p>照片出現在「上傳」區了嗎？很好！再<strong>點一下那張照片</strong>，它就會跑到你的設計畫布上了！</p>
+            <button onclick="nextStep()">我的照片在畫布上了！下一步！</button>
+        </div>
+
+        <div id="step-13" class="step">
+            <p class="progress-indicator">第 13 步 / 共 33 步</p>
+            <h2>調整照片 (可選)</h2>
+            <p class="icon">👌</p>
+            <p>你可以用手指<strong>按住</strong>照片移動位置，或用<strong>兩指捏合/張開</strong>來縮放大小。調整到你喜歡的樣子！</p>
+            <button onclick="nextStep()">我調整好了，下一步！</button>
+        </div>
+
+        <div id="step-14" class="step">
+            <p class="progress-indicator">第 14 步 / 共 33 步</p>
+            <h2>找到文字工具</h2>
+            <p class="icon">T</p>
+            <p>看看畫面<strong>下方</strong>的工具列，找到「<strong>文字</strong>」按鈕 (一個 T 字)，點它。</p>
+            <button onclick="nextStep()">我點了文字，下一步！</button>
+        </div>
+
+        <div id="step-15" class="step">
+            <p class="progress-indicator">第 15 步 / 共 33 步</p>
+            <h2>新增文字方塊</h2>
+            <p class="icon">⌨️</p>
+            <p>點選「<strong>新增文字方塊</strong>」。</p>
+            <button onclick="nextStep()">我新增文字方塊了，下一步！</button>
+        </div>
+
+        <div id="step-16" class="step">
+            <p class="progress-indicator">第 16 步 / 共 33 步</p>
+            <h2>輸入文字</h2>
+            <p class="icon">✏️</p>
+            <p><strong>點兩下</strong>剛剛出現的文字方塊，開始打字。請<strong>仔細輸入</strong>：「<strong>土庫國小 你的班級 你的座號 你的姓名</strong>」 (例如：土庫國小三年一班01號王小明)。</p>
+            <button onclick="nextStep()">我打好名字了，下一步！</button>
+        </div>
+
+        <div id="step-17" class="step">
+            <p class="progress-indicator">第 17 步 / 共 33 步</p>
+            <h2>找到分享按鈕</h2>
+             <p class="icon">⬆️</p>
+            <p>設計完成！請點擊畫面<strong>右上角</strong>的「<strong>分享</strong>」按鈕 (一個方框加向上箭頭)。</p>
+            <button onclick="nextStep()">我點了分享，下一步！</button>
+        </div>
+
+        <div id="step-18" class="step">
+            <p class="progress-indicator">第 18 步 / 共 33 步</p>
+             <h2>選擇下載</h2>
+            <p class="icon">⬇️</p>
+            <p>在跳出的選單中，選擇「<strong>下載</strong>」。</p>
+             <button onclick="nextStep()">我選了下載，下一步！</button>
+        </div>
+
+        <div id="step-19" class="step">
+            <p class="progress-indicator">第 19 步 / 共 33 步</p>
+            <h2>選擇檔案類型</h2>
+            <p class="icon">👍</p>
+            <p>確認「<strong>檔案類型</strong>」是「<strong>PNG</strong>」。如果不是，請點一下把它改成 PNG。</p>
+            <button onclick="nextStep()">檔案類型是 PNG，下一步！</button>
+        </div>
+
+        <div id="step-20" class="step">
+            <p class="progress-indicator">第 20 步 / 共 33 步</p>
+            <h2>點擊下載</h2>
+            <p class="icon">⬇️</p>
+            <p>按下最下方<strong>紫色</strong>的「<strong>下載</strong>」按鈕，耐心等待儲存完成。</p>
+            <button onclick="nextStep()">我按了下載，下一步！</button>
+        </div>
+
+         <div id="step-21" class="step">
+            <p class="progress-indicator">第 21 步 / 共 33 步</p>
+             <h2>儲存到檔案</h2>
+            <p class="icon">📁</p>
+            <p>如果跳出視窗問你要存到哪裡，請選擇「<strong>儲存到檔案</strong>」->「<strong>我的 iPad</strong>」->「<strong>下載項目</strong>」-> 按「<strong>儲存</strong>」。如果沒跳出來，它通常也會存在那裡。</p>
+             <button onclick="nextStep()">我知道檔案存到哪了，下一步！</button>
+        </div>
+
+        <div id="step-22" class="step">
+            <p class="progress-indicator">第 22 步 / 共 33 步</p>
+            <h2>找到檔案 App</h2>
+             <p class="icon">📁</p>
+            <p>現在，請回到 iPad 桌面，找到<strong>藍色資料夾</strong>圖案的「<strong>檔案</strong>」App，點開它。</p>
+             <button onclick="nextStep()">我打開檔案 App 了，下一步！</button>
+        </div>
+
+        <div id="step-23" class="step">
+            <p class="progress-indicator">第 23 步 / 共 33 步</p>
+            <h2>進入下載項目</h2>
+            <p class="icon">👉</p>
+            <p>在「檔案」App 裡，先點左邊的「<strong>我的 iPad</strong>」，再點右邊的「<strong>下載項目</strong>」資料夾。</p>
+            <button onclick="nextStep()">我進到下載項目了，下一步！</button>
+        </div>
+
+        <div id="step-24" class="step">
+            <p class="progress-indicator">第 24 步 / 共 33 步</p>
+             <h2>找到你的檔案</h2>
+            <p class="icon">👀</p>
+            <p>找到你剛剛從 Canva 下載的圖片檔案 (檔名可能是一串英文或數字)。</p>
+             <button onclick="nextStep()">我找到檔案了，下一步！</button>
+        </div>
+
+        <div id="step-25" class="step">
+            <p class="progress-indicator">第 25 步 / 共 33 步</p>
+             <h2>長按檔案</h2>
+            <p class="icon">👇</p>
+            <p>用手指<strong>「長按」</strong>住那個檔案不放，直到跳出一個小選單。</p>
+             <button onclick="nextStep()">我看到選單了，下一步！</button>
+        </div>
+
+        <div id="step-26" class="step">
+             <p class="progress-indicator">第 26 步 / 共 33 步</p>
+             <h2>選擇重新命名</h2>
+            <p class="icon">✏️</p>
+            <p>在選單中點選「<strong>重新命名</strong>」。</p>
+            <button onclick="nextStep()">我點了重新命名，下一步！</button>
+        </div>
+
+        <div id="step-27" class="step">
+            <p class="progress-indicator">第 27 步 / 共 33 步</p>
+             <h2>輸入正確檔名</h2>
+             <p class="icon">⌨️ +❗</p>
+             <p><strong>這是最重要的一步！</strong> 把舊名字刪掉，然後<strong>一個字都不能錯</strong>地輸入：「<strong>土庫國小班級座號姓名</strong>」(例：土庫國小三年一班01號王小明)。打完後按鍵盤的「<strong>完成</strong>」。</p>
+             <div class="important-note">請再三確認：土庫國小 + 你的班級 + 你的座號 + 你的姓名，格式完全正確！</div>
+             <button onclick="nextStep()">我確定名字打對了！下一步！</button>
+        </div>
+
+        <div id="step-28" class="step">
+             <p class="progress-indicator">第 28 步 / 共 33 步</p>
+             <h2>準備上傳檔案</h2>
+             <p class="icon">🔗</p>
+             <p>檔案改好名字了，現在我們要把它上傳到老師指定的雲端資料夾。</p>
+             <button onclick="nextStep()">準備好了，下一步！</button>
+         </div>
+
+        <div id="step-29" class="step">
+            <p class="progress-indicator">第 29 步 / 共 33 步</p>
+            <h2>打開雲端硬碟連結</h2>
+            <p class="icon">🔗</p>
+            <p>接下來，請點擊下方按鈕，它會在<strong>新的分頁</strong>打開老師的 Google Drive 資料夾。<br>(如果需要登入 Google 帳號，請找老師幫忙。)</p>
+            <a href="https://drive.google.com/drive/folders/1W2FkNPABzoBmUS388znIRteYbICUMIM7?usp=sharing" target="_blank" class="button-link">點我打開雲端資料夾 🔗</a>
+            <p>打開連結後，請<strong>回到這個頁面</strong>，然後按 [下一步] 來看如何在資料夾裡上傳檔案。</p>
+            <button onclick="nextStep()">我打開連結了，下一步！</button>
+        </div>
+        <div id="step-30" class="step">
+            <p class="progress-indicator">第 30 步 / 共 33 步</p>
+            <h2>找到雲端硬碟的上傳鈕</h2>
+            <p class="icon">☁️⬆️</p>
+            <p>在你剛剛打開的 Google Drive 資料夾頁面，找到「<strong>+ 新增</strong>」或「<strong>上傳</strong>」按鈕，點它。</p>
+             <button onclick="nextStep()">我找到上傳按鈕了，下一步！</button>
+        </div>
+
+        <div id="step-31" class="step">
+            <p class="progress-indicator">第 31 步 / 共 33 步</p>
+            <h2>選擇瀏覽檔案</h2>
+             <p class="icon">📁</p>
+            <p>選擇「<strong>上傳</strong>」，然後選擇「<strong>瀏覽</strong>」。</p>
+             <button onclick="nextStep()">我選了瀏覽，下一步！</button>
+        </div>
+
+        <div id="step-32" class="step">
+            <p class="progress-indicator">第 32 步 / 共 33 步</p>
+            <h2>選擇你的檔案</h2>
+            <p class="icon">✅</p>
+            <p>在跳出的「檔案」選擇畫面中，找到你剛剛<strong>改好名字</strong>的那個檔案 (<strong>土庫國小班級座號姓名.png</strong>)，點選它。</p>
+             <button onclick="nextStep()">我選好我的檔案了，下一步！</button>
+        </div>
+
+        <div id="step-33" class="step">
+            <p class="progress-indicator">第 33 步 / 共 33 步</p>
+            <h2>等待上傳完成</h2>
+             <p class="icon">⏳</p>
+            <p>請耐心等待檔案上傳完成。看到你的檔名出現在列表裡，就代表成功了！</p>
+             <button onclick="completeTask()">我看到檔案上傳成功了！完成任務！</button>
+        </div>
+
+        <div id="step-34" class="step">
+             <h2>任務完成！你是 Canva 小高手！🎉🥳</h2>
+             <p class="icon">🏆</p>
+            <p>太棒了！你跟著所有步驟完成了這次的 Canva 設計與上傳任務！你超厲害的！現在可以告訴老師你已經做完了！</p>
+            <button onclick="restartTask()">重新開始任務</button>
+        </div>
+
+        <div class="help-text">
+            卡關了嗎？遇到問題隨時舉手問老師喔！🙋‍♀️🙋‍♂️
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        const steps = document.querySelectorAll('.step');
+        // const totalSteps = steps.length -1; // Recalculate if needed, but logic relies on index
+
+        function showStep(stepIndex) {
+            steps.forEach((step, index) => {
+                step.classList.toggle('active-step', index === stepIndex);
+                // if (index === stepIndex) {
+                //     step.classList.add('active-step');
+                // } else {
+                //     step.classList.remove('active-step');
+                // }
+            });
+            window.scrollTo(0, 0); // Scroll to top on step change
+        }
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function completeTask() {
+             // Optional: Add any completion logic here
+             showStep(steps.length - 1); // Show the final completion step
+        }
+
+        function restartTask() {
+            currentStep = 0;
+            showStep(currentStep);
+        }
+
+        // Show the first step initially
+        document.addEventListener('DOMContentLoaded', () => {
+            showStep(0);
+        });
+    </script>
+</body>
+</html>
