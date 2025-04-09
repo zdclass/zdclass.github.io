@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva 小高手任務</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+        .step {
+            display: none; /* Hide all steps initially */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .step.active-step {
+            display: block; /* Show only the active step */
+        }
+        .icon {
+            font-size: 4rem; /* Larger icon */
+            margin-bottom: 15px;
+        }
+        h2 {
+            color: #5a4bff; /* Purple color */
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1.1rem; /* Slightly larger text */
+            margin-bottom: 20px;
+        }
+        strong {
+             color: #d63384; /* Pinkish color for emphasis */
+             font-weight: bold;
+        }
+        button { /* Style for NEXT buttons */
+            background-color: #5a4bff; /* Purple button */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px; /* More rounded */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            min-width: 200px; /* Ensure button is wide enough */
+        }
+        button:hover {
+            background-color: #473acc; /* Darker purple on hover */
+        }
+        button:disabled {
+            background-color: #cccccc;
